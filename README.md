@@ -1,6 +1,6 @@
 # Private Events
 
-This is my submission for the Private Events project as assigned by The Odin Project.
+This is my submission for the [Private Events](https://www.theodinproject.com/lessons/ruby-on-rails-private-events) project as assigned by The Odin Project.
 
 ## Assignment
 You want to build a site similar to a private [Eventbrite](https://eventbrite.com) which allows users to create events and then manage user signups.
