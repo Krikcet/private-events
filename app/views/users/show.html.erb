@@ -10,9 +10,10 @@
 <% if @user.attended_events.empty? %>
   <p>No events were attended.</p>
 <% else %>
-  <% @user.created_events.each do |event| %>
+  <% @user.attended_events.each do |event| %>
     <p><%= event.title %></p>
   <% end %>
 <% end %>
 
+<%= link_to 'Edit Profile', edit_registration_path(@user) %>
 <%= link_to 'Create event', new_event_path %>

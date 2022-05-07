@@ -9,4 +9,7 @@ A user can create events. A user can attend many events. An event can be attende
 
 This project will require you to model many-to-many relationships and also to be very conscious about your foreign keys and class names (hint: you won’t be able to just rely on Rails’ defaults like you have before).
 
-## Notes
+# To Do
+- configure edit user page
+  - add edit profile button to profile page
+- add usernames to existing users
