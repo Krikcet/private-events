@@ -5,6 +5,11 @@
 <%= @event.location %>
 <%= @event.date %>
 
+<% if user_signed_in? %>
+  <p>Would you like to attend this event?</p>
+  <%= button_to "Attend this event", @event_attendings, method: :post %>
+<% end %>
+
 <div>
   <%= link_to "Edit this event", edit_event_path(@event) %> |
   <%= link_to "Back to events", events_path %>
