@@ -1,6 +1,7 @@
 class EventAttendingsController < ApplicationController
   def create
-    @event_attending = EventAttending.new(event_attending_params)
+    @event_attending = EventAttending.create(event_attending_params)
+    redirect_to event_path(event_attending_params[:attended_event_id])
   end
 
   # DELETE

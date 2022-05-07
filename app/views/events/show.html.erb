@@ -9,7 +9,7 @@
 
 <% if user_signed_in? %>
   <p>Would you like to attend this event?</p>
-  <%= button_to "Attend this event", event_attendings_path(event_attendee_id: current_user.id, attended_event_id: @event.id)  %>
+  <%= button_to "Attend this event", event_attendings_path( event_attending:{ attended_event_id: @event.id, event_attendee_id: current_user.id} ) %>
 <% end %>
 
 <div>
