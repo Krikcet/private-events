@@ -15,9 +15,6 @@
       <li class="nav-item">
         <a href=" <%= root_path %> " class="nav-link">Home</a>  
       </li>
-      <li class="nav-item">
-        <a href=" <%= user_path(current_user.id) %> " class="nav-link">Profile</a>  
-      </li>
       <% if !user_signed_in? && !current_page?('/users/sign_in') %>
       <li class="nav-item">
         <a class="nav-link" href=" <%= new_user_session_path %> ">Sign In</a>
@@ -29,6 +26,9 @@
       </li>
       <% end %>
       <% if user_signed_in? %>
+      <li class="nav-item">
+        <a href=" <%= user_path(current_user.id) %> " class="nav-link">Profile</a>  
+      </li>
       <li class="nav-item">
         <a class="nav-link" href=' <%= destroy_user_session_path %>'>Log Out</a>
       </li>
