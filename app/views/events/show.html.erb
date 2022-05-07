@@ -2,8 +2,8 @@
 
 <%= render @event %>
 
-<%= @event.location %>
-<%= @event.date %>
+<p><b>Location: </b><%= @event.location %></p>
+<p><b>Date: </b><%= @event.date %></p>
 
 <% if user_signed_in? %>
   <p>Would you like to attend this event?</p>
