@@ -5,7 +5,7 @@
 <p><b>Title: </b> <%= @event.title %></p>
 <p><b>Location: </b><%= @event.location %></p>
 <p><b>Date: </b><%= @event.date %></p>
-<p><b>Attendees: </b> <%= @event.attendees.map { |x| x.email } %> </p>
+<p><b>Attendees: </b> <%= @event.attendees.map { |att| att.username } %> </p>
 
 <% if user_signed_in? %>
   <p>Would you like to attend this event?</p>
