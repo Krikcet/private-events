@@ -4,6 +4,7 @@
 #
 #  attended_event_id :bigint           not null
 #  event_attendee_id :bigint           not null
+#  id                :bigint           not null, primary key
 #
 
 # This model initially had no columns defined. If you add columns to the

@@ -4,6 +4,7 @@
 #
 #  attended_event_id :bigint           not null
 #  event_attendee_id :bigint           not null
+#  id                :bigint           not null, primary key
 #
 require "test_helper"
 

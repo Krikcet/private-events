@@ -2,12 +2,14 @@
 
 <%= render @event %>
 
+<p><b>Title: </b> <%= @event.title %></p>
 <p><b>Location: </b><%= @event.location %></p>
 <p><b>Date: </b><%= @event.date %></p>
+<p><b>Attendees: </b> <%= @event.attendees.each { |person| person.id } %> </p>
 
 <% if user_signed_in? %>
   <p>Would you like to attend this event?</p>
-  <%= button_to "Attend this event", @event_attendings, method: :post %>
+  <%= button_to "Attend this event", event_attendings_path(event_attendee_id: current_user.id, attended_event_id: @event.id)  %>
 <% end %>
 
 <div>
