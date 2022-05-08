@@ -10,3 +10,6 @@ A user can create events. A user can attend many events. An event can be attende
 This project will require you to model many-to-many relationships and also to be very conscious about your foreign keys and class names (hint: you won’t be able to just rely on Rails’ defaults like you have before).
 
 # To Do
+- prevent users from attending the same event twice
+- create past and future events
+- find a way around autofill

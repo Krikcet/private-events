@@ -12,8 +12,8 @@
   <% end %>
 
   <div>
-    <%= simple_form_for @event do |f| %>
-      <%= f.input :title %>
+    <%= simple_form_for @event, html: { autocomplete: 'do-not-autofill' } do |f| %>
+      <%= f.input :title  %>
       <%= f.input :location %>
       <%= f.input :date %>
       <%= f.button :submit, class: 'btn btn-primary'%>
