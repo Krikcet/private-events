@@ -7,7 +7,7 @@
     <p><b>Created by:</b> <%= event.creator.username %></p>
     <p><b>Date:</b> <%= event.date %></p>
     <p><b>Location:</b> <%= event.location %></p>
-    <% if current_user.id == event.creator.id %>      
+    <% if user_signed_in? && event.creator.id == current_user.id %>      
     <p>
       <%= link_to 'Edit this event', edit_event_path(event), class: "btn btn-primary" %>
     </p>
