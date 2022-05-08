@@ -1,9 +1,22 @@
 <h1>Events</h1>
 
 <div id="events">
-  <% @events.each do |event| %>
-    <%= render event %>
-    <h2><%= event.title %></h2>
+  <h2>Upcoming Events</h2>
+  <% @events.upcoming.each do |event| %>
+    <h3><%= event.title %></h3>
+    <p><b>Created by:</b> <%= event.creator.username %></p>
+    <p><b>Date:</b> <%= event.date %></p>
+    <p><b>Location:</b> <%= event.location %></p>    
+    <p>
+      <%= link_to "Show this event", event, class: "btn btn-primary" %>
+    </p>
+  <% end %>
+  <h2>Past Events</h2>
+  <% @events.past.each do |event| %>
+    <h3><%= event.title %></h3>
+    <p><b>Created by:</b> <%= event.creator.username %></p>
+    <p><b>Date:</b> <%= event.date %></p>
+    <p><b>Location:</b> <%= event.location %></p>    
     <p>
       <%= link_to "Show this event", event, class: "btn btn-primary" %>
     </p>
