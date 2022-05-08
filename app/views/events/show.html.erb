@@ -6,8 +6,9 @@
 <p><b>Attendees: </b> <%= @event.attendees.map { |att| att.username } %> </p>
 
 <% if user_signed_in? && !@event.attendees.include?(current_user) %>
-  <p>Would you like to attend this event?</p>
   <%= button_to "Attend this event", event_attendings_path( event_attending:{ attended_event_id: @event.id, event_attendee_id: current_user.id} ) %>
+<% elsif user_signed_in? %>
+  <%= button_to "Cancel attendance", event_attending_path(event_attending: { attended_event_id: @event.id, event_attendee_id: current_user.id } ), method: :delete %>
 <% end %>
 
 <div>

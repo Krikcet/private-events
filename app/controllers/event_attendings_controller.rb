@@ -6,8 +6,9 @@ class EventAttendingsController < ApplicationController
 
   # DELETE
   def destroy
-    @event_attending = EventAttending.find(params[:id])
-    @event_attending.destroy_all
+    @event_attending = EventAttending.find_by(attended_event_id: event_attending_params[:attended_event_id], event_attendee_id: current_user.id)
+    @event_attending.destroy
+    redirect_to event_path(event_attending_params[:attended_event_id])
   end
 
   private

@@ -10,7 +10,5 @@ This is my submission for the [Private Events](https://www.theodinproject.com/le
 >This project will require you to model many-to-many relationships and also to be very conscious about your foreign keys and class names (hint: you won’t be able to just rely on Rails’ defaults like you have before).
 
 # To Do
-- prevent users from attending the same event twice
-- find a way around autofill
 - allow users to remove themselves as an attendee
 - make each event private and add the functionality for the event creator to invite specific users to an event
