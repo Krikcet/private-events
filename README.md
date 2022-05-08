@@ -11,7 +11,6 @@ This is my submission for the [Private Events](https://www.theodinproject.com/le
 
 # To Do
 - allow users to edit and delete events they created
-  - add edit button to profile page
   - add edit button to home page
 - prevent users from attending the same event twice
 - find a way around autofill

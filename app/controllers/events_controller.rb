@@ -1,7 +1,7 @@
 class EventsController < ApplicationController
   before_action :set_event, only: %i[ show edit update destroy ]
   before_action :authenticate_user!, only: [:new, :create, :edit, :update]
-  before_action :is_creator?, only: [:edit, :update]
+  before_action :verify_creator, only: [:edit, :update]
 
   # GET /events or /events.json
   def index
@@ -62,7 +62,7 @@ class EventsController < ApplicationController
   end
 
   # Redirect if user is not creator
-  def is_creator?
+  def verify_creator
     @event = Event.find(params[:id])
     redirect_to @event, notice: 'Current user does not have permission to edit this event!' unless current_user.id == @event.creator.id
   end
