@@ -1,14 +1,14 @@
 class EventAttendingsController < ApplicationController
   def create
     @event_attending = EventAttending.create(event_attending_params)
-    redirect_to event_path(event_attending_params[:attended_event_id])
+    redirect_to event_path(event_attending_params[:attended_event_id]), notice: "You are attending this event!"
   end
 
   # DELETE
   def destroy
     @event_attending = EventAttending.find_by(attended_event_id: event_attending_params[:attended_event_id], event_attendee_id: current_user.id)
     @event_attending.destroy
-    redirect_to event_path(event_attending_params[:attended_event_id])
+    redirect_to event_path(event_attending_params[:attended_event_id]), notice: 'You are no longer attending this event!'
   end
 
   private
