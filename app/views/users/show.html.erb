@@ -6,6 +6,7 @@
   <% @user.created_events.each do |event| %>
     <p><b>Title: </b><%= event.title %></p>
     <p><b>Date: </b><%= event.date %></p>
+    <%= link_to 'Edit Event', edit_event_path(event) %>
   <% end %>
 <% end %>
 
