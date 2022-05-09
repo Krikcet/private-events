@@ -11,9 +11,10 @@ This is my submission for the [Private Events](https://www.theodinproject.com/le
 
 # To Do
 - make each event private and add the functionality for the event creator to invite specific users to an event
-  - only show attend button if invited
-  - add invitation through table
   - delete unnecessary views
+  - add invite user button
+
+- back to event should link back to current event from edit event page
 
 
 
