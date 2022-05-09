@@ -10,5 +10,5 @@
 #
 class EventInvitation < ApplicationRecord
   belongs_to :user_invited, class_name: 'User'
-  belongs_t :invited_event, class: 'Event'
+  belongs_to :invited_event, class_name: 'Event'
 end
