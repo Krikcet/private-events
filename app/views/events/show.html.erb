@@ -10,15 +10,17 @@
 <% elsif user_signed_in? && @event.attendees.include?(current_user) %>
   <%= button_to "Cancel attendance", event_attending_path(event_attending: { attended_event_id: @event.id, event_attendee_id: current_user.id } ), method: :delete %>
 <% end %>
+  
+  <% if user_signed_in? && @event.creator.id === current_user.id %>
+  <%= link_to "Invite User", new_event_invitation_path() %>    
+  <% end %>
 
-<% if user_signed_in? && @event.creator.id == current_user.id %>
-  <%= button_to "Invite users to this event" %>
-<% end %>
 
 <div>
   <%= link_to "Edit this event", edit_event_path(@event) %>
 
   <%= link_to "Back to events", events_path %>
+
 
   <%= button_to "Destroy this event", @event, method: :delete %>
 </div>

@@ -65,6 +65,6 @@ class EventInvitationsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def event_invitation_params
-      params.require(:event_invitation).permit(:user_invited_id, :invited_event_id)
+      params.require(:event_invitation).permit(:invited_user_id, :invited_event_id)
     end
 end
