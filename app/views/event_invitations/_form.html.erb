@@ -6,8 +6,8 @@
       <div class="form-inputs">
         <% @possible_invites = User.all.reject { |user| user.id == current_user.id } %>
         <%= f.input :invited_user_id, label: 'Invite:', collection: @possible_invites, label_method: :username, value: :id %>
-        <%= f.input :invited_event_id, label: 'To:', collection: Event.all, label_method: :title, value: :id %>
-
+        <%= f.hidden_field :invited_event_id, value: @event.id %>
+        <p><b>To: </b><%= @event.title %></p>
       </div>
     
       <div class="form-actions">
