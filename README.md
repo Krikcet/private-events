@@ -14,7 +14,6 @@ This is my submission for the [Private Events](https://www.theodinproject.com/le
   - add invite user buttons
     - only on current user's events
     - should display form with list of users to invite
-      - **RESEARCH HOW TO CREATE NEW INVITATION WITH THE FORM** 
   - only show event details to invited users
   - delete unnecessary views
 

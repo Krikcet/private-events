@@ -12,8 +12,10 @@
 <% end %>
   
   <% if user_signed_in? && @event.creator.id === current_user.id %>
-  <%= link_to "Invite User", new_event_invitation_path() %>    
+    <%= link_to "Invite User", new_event_invitation_path() %>    
   <% end %>
+
+  <%= render :partial => 'event_invitations/form', :locals => {:event_invitation => @event.event_invitations.new} %>
 
 
 <div>
