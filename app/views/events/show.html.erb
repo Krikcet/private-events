@@ -13,14 +13,14 @@
   
   <% if user_signed_in? && @event.creator.id === current_user.id %>
     <%= render :partial => 'event_invitations/form', :locals => {:event_invitation => @event.event_invitations.new} %>
+    <%= button_to "Destroy this event", @event, method: :delete %>
+    <%= link_to "Edit this event", edit_event_path(@event) %>
   <% end %>
 
 
 <div>
-  <%= link_to "Edit this event", edit_event_path(@event) %>
 
   <%= link_to "Back to events", events_path %>
 
 
-  <%= button_to "Destroy this event", @event, method: :delete %>
 </div>
