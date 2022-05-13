@@ -11,11 +11,11 @@
   <%= button_to "Cancel attendance", event_attending_path(event_attending: { attended_event_id: @event.id, event_attendee_id: current_user.id } ), method: :delete %>
 <% end %>
   
-  <% if user_signed_in? && @event.creator.id === current_user.id %>
-    <%= render :partial => 'event_invitations/form', :locals => {:event_invitation => @event.event_invitations.new} %>
-    <%= button_to "Destroy this event", @event, method: :delete %>
-    <%= link_to "Edit this event", edit_event_path(@event) %>
-  <% end %>
+<% if user_signed_in? && @event.creator.id === current_user.id %>
+  <%= render :partial => 'event_invitations/form', :locals => {:event_invitation => @event.event_invitations.new} %>
+  <%= button_to "Destroy this event", @event, method: :delete %>
+  <%= link_to "Edit this event", edit_event_path(@event) %>
+<% end %>
 
 
 <div>

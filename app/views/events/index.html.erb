@@ -1,40 +1,61 @@
 <h1>Events</h1>
 
 <div id="events">
-  <% unless !user_signed_in? %>
+  <% if user_signed_in? %>    
   <h2>Upcoming Events</h2>
-  <% @events.upcoming.each do |event| %>
-    <h3><%= event.title %></h3>
-    <p><b>Created by:</b> <%= event.creator.username %></p>
-    <p><b>Date:</b> <%= event.date %></p>
-    <p><b>Location:</b> <%= event.location %></p>
-    <% if user_signed_in? && event.creator.id == current_user.id %>      
-    <p>
-      <%= link_to 'Edit this event', edit_event_path(event), class: "btn btn-primary" %>
-    </p>
-    <% end %>    
-    <p>
-      <%= link_to "Show this event", event, class: "btn btn-primary" %>
-    </p>
-  <% end %>
+    <% @events.upcoming.each do |event| %>
+      
+      <% if current_user.id === event.creator.id || event.invited_user_ids.include?(current_user.id) %>
+        <h3><%= event.title %></h3>
+        <p><b>Created by:</b> <%= event.creator.username %></p>
+        <p><b>Date:</b> <%= event.date %></p>
+        <p><b>Location:</b> <%= event.location %></p>
+        <% if event.creator.id == current_user.id %>      
+        <p>
+          <%= link_to 'Edit this event', edit_event_path(event), class: "btn btn-primary" %>
+        </p>
+        <% end %>    
+        <p>
+          <%= link_to "Show this event", event, class: "btn btn-primary" %>
+        </p>
+      <% else %>
+        <h3>Private Event</h3>
+      <% end %>
+    <% end %>
+    
   <h2>Past Events</h2>
-  <% @events.past.each do |event| %>
-    <% if event.invited_users.include?(current_user) || event.creator.id == current_user.id %>
-      <h3><%= event.title %></h3>
-      <p><b>Created by:</b> <%= event.creator.username %></p>
-      <p><b>Date:</b> <%= event.date %></p>
-      <p><b>Location:</b> <%= event.location %></p>    
-      <%= link_to "Show this event", event, class: "btn btn-primary" %>
-    <% else %>
-      <h3>Private Event</h3>
-      <p>You must be invited to see details.</p>
+    <% @events.past.each do |event| %>
+
+      <% if current_user.id === event.creator.id || event.invited_user_ids.include?(current_user.id)  %>
+        <h3><%= event.title %></h3>
+        <p><b>Created by:</b> <%= event.creator.username %></p>
+        <p><b>Date:</b> <%= event.date %></p>
+        <p><b>Location:</b> <%= event.location %></p>
+        <% if event.creator.id == current_user.id %>      
+        <p>
+          <%= link_to 'Edit this event', edit_event_path(event), class: "btn btn-primary" %>
+        </p>
+        <% end %>    
+        <p>
+          <%= link_to "Show this event", event, class: "btn btn-primary" %>
+        </p>
+      <% else %>
+        <h3>Private Event</h3>
+      <% end %>
     <% end %>
-    <p>
-    </p>
-    <% end %>
+
   <% else %>
-    <p><b>SIGN IN TO SEE EVENTS</b></p>
+    <h2>Upcoming Events</h2>
+    <% @events.upcoming.each do |event| %>
+      <h3>Private Event</h3>
+    <% end %>
+    <h2>Past Events</h2>
+    <% @events.past.each do |event| %>
+      <h3>Private Event</h3>
+    <% end %>
   <% end %>
+
+  
+  <%= link_to "New event", new_event_path, class: "btn btn-primary" %>
 </div>
 
-<%= link_to "New event", new_event_path, class: "btn btn-primary" %>

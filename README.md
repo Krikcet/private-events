@@ -13,8 +13,8 @@ This is my submission for the [Private Events](https://www.theodinproject.com/le
 - make each event private and add the functionality for the event creator to invite specific users to an event
   - add invite user buttons
     - requires js to dynamically render
-  - only show event details to invited users
   - delete unnecessary views
+  - Change how the home page is displayed when the user is signed out
 
 - back to event should link back to current event from edit event page
 
