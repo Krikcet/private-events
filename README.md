@@ -14,7 +14,6 @@ This is my submission for the [Private Events](https://www.theodinproject.com/le
   - add invite user buttons
     - requires js to dynamically render
   - delete unnecessary views
-  - Change how the home page is displayed when the user is signed out
 
 - back to event should link back to current event from edit event page
 

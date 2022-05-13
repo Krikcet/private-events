@@ -5,7 +5,7 @@
   <h2>Upcoming Events</h2>
     <% @events.upcoming.each do |event| %>
       
-      <% if current_user.id === event.creator.id || event.invited_user_ids.include?(current_user.id) %>
+      <% if current_user.id === event.creator.id || event.invited_user_ids.include?(current_user.id) || event.attendee_ids.include?(current_user.id) %>
         <h3><%= event.title %></h3>
         <p><b>Created by:</b> <%= event.creator.username %></p>
         <p><b>Date:</b> <%= event.date %></p>
@@ -26,7 +26,7 @@
   <h2>Past Events</h2>
     <% @events.past.each do |event| %>
 
-      <% if current_user.id === event.creator.id || event.invited_user_ids.include?(current_user.id)  %>
+      <% if current_user.id === event.creator.id || event.invited_user_ids.include?(current_user.id) || event.attendee_ids.include?(current_user.id) %>
         <h3><%= event.title %></h3>
         <p><b>Created by:</b> <%= event.creator.username %></p>
         <p><b>Date:</b> <%= event.date %></p>
