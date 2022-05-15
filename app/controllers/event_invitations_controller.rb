@@ -24,6 +24,12 @@ class EventInvitationsController < ApplicationController
     @event_invitation = EventInvitation.new(event_invitation_params)
 
     respond_to do |format|
+      if event_invitation_params[:invited_user_id] == ''
+        format.html { redirect_to event_url(event_invitation_params[:invited_event_id]), notice: 'Username not selected!' }
+        format.json { render :show, status: :ok, location: @event_invitation }
+
+      end
+
       if @event_invitation.save
         format.html { redirect_to event_url(event_invitation_params[:invited_event_id]), notice: "Event invitation was successfully created." }
         format.json { render :show, status: :created, location: @event_invitation }
