@@ -19,6 +19,7 @@ This is my submission for the [Private Events](https://www.theodinproject.com/le
 
 - make it purdy
   - use bootstrap grid to style events index
+    - try to place gap between event cards
 
 
 - **DEPLOY TO HEROKU**

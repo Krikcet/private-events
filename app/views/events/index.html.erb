@@ -1,16 +1,16 @@
 <div class="container">
   <div class="row text-center">
-    <h1>Events</h1>
+    <h1 class="text-uppercase display-1">Events</h1>
   </div>
-  <div class="row">
+  <div class="row row-cols-3">
     <div class="col"></div>
-    <div class='col' id="events">
+    <div class='col text-center' id="events">
     
         <% if user_signed_in? %>
           <h2>Upcoming Events</h2>
           <% @events.upcoming.each do |event| %>
     
-            <div class="card">
+            <div class="card mb-2">
               <% if current_user.id === event.creator.id || event.invited_user_ids.include?(current_user.id) || event.attendee_ids.include?(current_user.id) %>
                 <div class="card-body">
                   <div class="card-title">
@@ -62,31 +62,17 @@
           <% end %>
     
         <% else %>
-          <h2>Upcoming Events</h2>
-          <% @events.upcoming.each do |event| %>
-            <div class="card">
-              <div class="card-body">
-                <div class="card-title">
-                  <h3>Private Event</h3>
-                </div>
-              </div>
-            </div>
-          <% end %>
-          <h2>Past Events</h2>
-          <% @events.past.each do |event| %>
-            <div class="card">
-              <div class="card-body">
-                <div class="card-title">
-                  <h3>Private Event</h3>
-                </div>
-              </div>
-            </div>
-          <% end %>
+          <h3 class="mt-5">Sign in to see events!</h3>
+          <%= link_to new_user_session_path%>
         <% end %>
     
     
-        <%= link_to "New event", new_event_path, class: "btn btn-primary" %>
       </div>
     <div class="col"></div>
   </div>
+  <% if user_signed_in? %>
+      <div class="row">
+        <%= link_to "New event", new_event_path, class: "btn btn-primary btn-md col-2 mx-auto" %>
+      </div>
+  <% end %>
 </div>
