@@ -44,20 +44,33 @@
           <% @events.past.each do |event| %>
     
             <% if current_user.id === event.creator.id || event.invited_user_ids.include?(current_user.id) || event.attendee_ids.include?(current_user.id) %>
-              <h3><%= event.title %></h3>
-              <p><b>Created by:</b> <%= event.creator.username %></p>
-              <p><b>Date:</b> <%= event.date %></p>
-              <p><b>Location:</b> <%= event.location %></p>
-              <% if event.creator.id == current_user.id %>
-              <p>
-                <%= link_to 'Edit this event', edit_event_path(event), class: "btn btn-primary" %>
-              </p>
-              <% end %>
-              <p>
-                <%= link_to "Show this event", event, class: "btn btn-primary" %>
-              </p>
+              <div class="card mb-2">
+                <div class="card-body">
+                  <div class="card-title">
+                    <h3><%= event.title %></h3>
+                  </div>
+                  <p><b>Created by:</b> <%= event.creator.username %></p>
+                  <p><b>Date:</b> <%= event.date %></p>
+                  <p><b>Location:</b> <%= event.location %></p>
+                  <% if event.creator.id == current_user.id %>
+                  <p>
+                    <%= link_to 'Edit this event', edit_event_path(event), class: "btn btn-primary" %>
+                  </p>
+                  <% end %>
+                  <p>
+                    <%= link_to "Show this event", event, class: "btn btn-primary" %>
+                  </p>
+                </div>
+              </div>
             <% else %>
-              <h3>Private Event</h3>
+              <div class="card mb-2">
+                <div class="card-body">
+                  <div class="card-title">
+                    <h3>Private Event</h3>
+                    <p>Must be invited to see event details!</p>
+                  </div>
+                </div>
+              </div>
             <% end %>
           <% end %>
     
