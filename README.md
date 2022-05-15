@@ -18,7 +18,7 @@ This is my submission for the [Private Events](https://www.theodinproject.com/le
 - back to event should link back to current event from edit event page
 
 - make it purdy
-
+  - use bootstrap grid to style events index
 
 
 - **DEPLOY TO HEROKU**
