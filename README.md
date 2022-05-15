@@ -9,10 +9,11 @@ This is my submission for the [Private Events](https://www.theodinproject.com/le
 >
 >This project will require you to model many-to-many relationships and also to be very conscious about your foreign keys and class names (hint: you won’t be able to just rely on Rails’ defaults like you have before).
 
+## Notes
+
+This was my biggest rails undertaking thus far. I used JS to dynamically render the invitation form on the event page.
 # To Do
 - make each event private and add the functionality for the event creator to invite specific users to an event
-  - add invite user buttons
-    - requires js to dynamically render
   - delete unnecessary views
 
 - back to event should link back to current event from edit event page
