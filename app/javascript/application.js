@@ -5,6 +5,7 @@ import "jquery";
 import "jquery_ujs";
 import "popper";
 import "bootstrap";
+import "custom/display_form";
 //= require jquery3
 //= require popper
 //= require bootstrap-sprockets
