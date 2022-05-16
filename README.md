@@ -16,13 +16,12 @@ This was my biggest rails undertaking thus far. I used JS to dynamically render 
 - make each event private and add the functionality for the event creator to invite specific users to an event
   - delete unnecessary views
 
-- add layout to sign up page
+- customize devise controller to display notice when username is already taken
 
 - back to event should link back to current event from edit event page
 
 - make it purdy
-  - use bootstrap grid to style events index
-    - try to place gap between event cards
+  - fix login buttons layout
 
 
 - **DEPLOY TO HEROKU**
