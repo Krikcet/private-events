@@ -16,7 +16,7 @@ This was my biggest rails undertaking thus far. I used JS to dynamically render 
 - make each event private and add the functionality for the event creator to invite specific users to an event
   - delete unnecessary views
 
-- add sign up button to landing page
+- add layout to sign up page
 
 - back to event should link back to current event from edit event page
 
