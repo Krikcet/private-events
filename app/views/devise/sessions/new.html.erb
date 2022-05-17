@@ -23,11 +23,9 @@
          </div>
        <% end %>
      
-       <div class="actions container">
-          <div class="row mb-2"><%= f.submit "Log in", class: 'btn btn-primary'%></div>
-          <div class="row row-cols-2">
-            <%= render "devise/shared/links" %>
-          </div>
+       <div class="actions">
+          <%= f.submit "Log in", class: 'btn btn-primary'%>
+          <%= render "devise/shared/links" %>
        </div>
      <% end %>
      
