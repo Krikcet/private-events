@@ -23,9 +23,11 @@
          </div>
        <% end %>
      
-       <div class="actions d-grid">
-          <%= f.submit "Log in", class: 'btn btn-primary'%>
-          <div class="row row-cols-2"><%= render "devise/shared/links" %></div>
+       <div class="actions container">
+          <div class="row mb-2"><%= f.submit "Log in", class: 'btn btn-primary'%></div>
+          <div class="row row-cols-2">
+            <%= render "devise/shared/links" %>
+          </div>
        </div>
      <% end %>
      
