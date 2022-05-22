@@ -16,7 +16,7 @@ This was my biggest rails undertaking thus far. I used JS to dynamically render 
 - make each event private and add the functionality for the event creator to invite specific users to an event
   - delete unnecessary views
 
-- customize devise controller to display notice when username is already taken
+- customize javascript to display notice when username is already taken
 
 - back to event should link back to current event from edit event page
 
