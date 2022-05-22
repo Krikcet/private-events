@@ -20,6 +20,7 @@ This was my biggest rails undertaking thus far. I used JS to dynamically render 
 
 - back to event should link back to current event from edit event page
 
+
 - make it purdy
   - fix login buttons layout
 
