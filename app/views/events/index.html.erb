@@ -21,11 +21,11 @@
                   <p><b>Location:</b> <%= event.location %></p>
                   <% if event.creator.id == current_user.id %>
                     <p>
-                      <%= link_to 'Edit this event', edit_event_path(event), class: "btn btn-primary" %>
+                      <%= link_to 'Edit this event', edit_event_path(event), class: "btn btn-dark" %>
                     </p>
                   <% end %>
                     <p>
-                      <%= link_to "Show this event", event, class: "btn btn-primary" %>
+                      <%= link_to "Show this event", event, class: "btn btn-dark" %>
                     </p>
                   <% else %>
                     <div class="card">
@@ -54,11 +54,11 @@
                   <p><b>Location:</b> <%= event.location %></p>
                   <% if event.creator.id == current_user.id %>
                   <p>
-                    <%= link_to 'Edit this event', edit_event_path(event), class: "btn btn-primary" %>
+                    <%= link_to 'Edit this event', edit_event_path(event), class: "btn btn-dark" %>
                   </p>
                   <% end %>
                   <p>
-                    <%= link_to "Show this event", event, class: "btn btn-primary" %>
+                    <%= link_to "Show this event", event, class: "btn btn-dark" %>
                   </p>
                 </div>
               </div>
@@ -76,8 +76,8 @@
     
         <% else %>
           <h2 class="mt-5">Sign in to see events!</h2>
-          <%= link_to 'Sign In', new_user_session_path, class: "btn btn-primary btn-md"%>
-          <%= link_to 'Sign Up', new_user_registration_path, class: "btn btn-primary btn-md"%>
+          <%= link_to 'Sign In', new_user_session_path, class: "btn btn-dark btn-md"%>
+          <%= link_to 'Sign Up', new_user_registration_path, class: "btn btn-dark btn-md"%>
         <% end %>
     
     
@@ -86,7 +86,7 @@
   </div>
   <% if user_signed_in? %>
       <div class="row">
-        <%= link_to "New event", new_event_path, class: "btn btn-primary btn-md col-2 mx-auto" %>
+        <%= link_to "New event", new_event_path, class: "btn btn-dark btn-md col-2 mx-auto" %>
       </div>
   <% end %>
 </div>
