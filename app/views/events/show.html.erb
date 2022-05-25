@@ -1,28 +1,29 @@
-<%= render @event %>
-
-<p><b>Title: </b> <%= @event.title %></p>
-<p><b>Location: </b><%= @event.location %></p>
-<p><b>Date: </b><%= @event.date %></p>
-<p><b>Attendees: </b> <%= @event.attendees.map { |att| att.username } %> </p>
-
-<% if user_signed_in? && @event.invited_users.include?(current_user) && !@event.attendees.include?(current_user) %>
-  <%= button_to "Attend this event", event_attendings_path( event_attending:{ attended_event_id: @event.id, event_attendee_id: current_user.id} ) %>
-<% elsif user_signed_in? && @event.attendees.include?(current_user) %>
-  <%= button_to "Cancel attendance", event_attending_path(event_attending: { attended_event_id: @event.id, event_attendee_id: current_user.id } ), method: :delete %>
-<% end %>
+<div class="container">
+  <div class="row text-center">
+    <%= render @event %>
+    <h1><%= @event.title %></h1>
   
-
-<% if user_signed_in? && @event.creator.id === current_user.id %>
-  <button id='invite-form-button'>Invite Someone</button>
-  <div id="invite-form"><%= render :partial => 'event_invitations/form', :locals => {:event_invitation => @event.event_invitations.new} %></div>
-  <%= button_to "Destroy this event", @event, method: :delete %>
-  <%= link_to "Edit this event", edit_event_path(@event) %>
-<% end %>
-
-
-<div>
-
-  <%= link_to "Back to events", events_path %>
-
-
+  <p><b>Location: </b><%= @event.location %></p>
+  <p><b>Date: </b><%= @event.date %></p>
+  <p><b>Attendees: </b> <%= @event.attendees.map { |att| att.username } %> </p>
+  
+  <% if user_signed_in? && @event.invited_users.include?(current_user) && !@event.attendees.include?(current_user) %>
+    <%= button_to "Attend this event", event_attendings_path( event_attending:{ attended_event_id: @event.id, event_attendee_id: current_user.id} ), class: 'btn btn-dark' %>
+  <% elsif user_signed_in? && @event.attendees.include?(current_user) %>
+    <%= button_to "Cancel attendance", event_attending_path(event_attending: { attended_event_id: @event.id, event_attendee_id: current_user.id } ), method: :delete, class: 'btn btn-dark' %>
+  <% end %>
+  
+  
+  <% if user_signed_in? && @event.creator.id === current_user.id %>
+    <button id='invite-form-button'>Invite Someone</button>
+    <div id="invite-form"><%= render :partial => 'event_invitations/form', :locals => {:event_invitation => @event.event_invitations.new} %></div>
+    <%= button_to "Destroy this event", @event, method: :delete %>
+    <%= link_to "Edit this event", edit_event_path(@event) %>
+  <% end %>
+  
+  
+  <div>
+    <%= link_to "Back to events", events_path, class: 'link-dark' %>
+    </div>
+  </div>
 </div>
