@@ -13,8 +13,7 @@ This is my submission for the [Private Events](https://www.theodinproject.com/le
 
 This was my biggest rails undertaking thus far. I used JS to dynamically render the invitation form on the event page.
 # To Do
-- make each event private and add the functionality for the event creator to invite specific users to an event
-  - delete unnecessary views
+- delete unnecessary views
 
 - customize javascript to display notice when username is already taken
 
@@ -23,6 +22,7 @@ This was my biggest rails undertaking thus far. I used JS to dynamically render 
 
 - make it purdy
   - fix login buttons layout
+  - style event#show page
 
 
 - **DEPLOY TO HEROKU**
