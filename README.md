@@ -16,13 +16,14 @@ This was my biggest rails undertaking thus far. I used JS to dynamically render 
 - delete unnecessary views
 
 - customize javascript to display notice when username is already taken
+  - may be able to do this with devise session controller and devise.en.yaml
 
 - back to event should link back to current event from edit event page
 
 
 - make it purdy
   - fix login buttons layout
-  - style event#show page
+  - style event#edit page
 
 
 - **DEPLOY TO HEROKU**
