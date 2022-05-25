@@ -10,8 +10,17 @@
   
     <section>
       <p><b>Location: </b><%= @event.location %></p>
-      <p><b>Date: </b><%= @event.date %></p>
-      <p><b>Attendees: </b> <%= @event.attendees.map { |att| att.username } %> </p>
+      <p><b>Date: </b><%= @event.date.strftime('%A, %B %-d, %Y') %></p>
+      <% attendee_array =  @event.attendees.map { |att| att.username } %>
+      <% attendee_string = '' %>
+      <% if attendee_array.length === 0 %>
+        <p><b>Attendees: </b>Nobody is coming!</p>
+      <% else %>
+        <% attendee_array.each do |att| %>
+        <% attendee_string = "#{att}, " %>
+        <% end %>
+      <% end %>
+      <p><b>Attendees: </b> <%= attendee_string[0...-2] %> </p>
     </section>
   
     <% if user_signed_in? && @event.invited_users.include?(current_user) && !@event.attendees.include?(current_user) %>
