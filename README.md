@@ -1,29 +1,16 @@
 # Private Events
 
-This is my submission for the [Private Events](https://www.theodinproject.com/lessons/ruby-on-rails-private-events) project as assigned by The Odin Project.
+This is a web application that allows users to sign up, create private events, invite users to events, and RSVP to events that they're invited to.
 
-## Assignment
->You want to build a site similar to a private [Eventbrite](https://eventbrite.com) which allows users to create events and then manage user signups.
->
->A user can create events. A user can attend many events. An event can be attended by many users. Events take place at a specific date and at a location (which you can just store as a string, like “Andy’s House”).
->
->This project will require you to model many-to-many relationships and also to be very conscious about your foreign keys and class names (hint: you won’t be able to just rely on Rails’ defaults like you have before).
-
-## Notes
-
-This was my biggest rails undertaking thus far. I used JS to dynamically render the invitation form on the event page.
-# To Do
-- delete unnecessary views
-
-- customize javascript to display notice when username is already taken
-  - may be able to do this with devise session controller and devise.en.yaml
-
-- back to event should link back to current event from edit event page
+![Private Events screenshot](private-events-screenshot.png)
 
 
-- make it purdy
-  - fix login buttons layout
-  - style event#edit page
+## How It's Made:
 
+**Tech Used:** Ruby, Rails, HTML, CSS(Bootstrap), JS, (React will be added) 
 
-- **DEPLOY TO HEROKU**
+There's still some work to be done, not the least of which is updating the UI with React. Rails made it relatively easy to set up all the associations between users, events, invitations, and so forth. So far, I have very basic Bootstrap styling, and I look forward to expanding on that to make the app look and feel great.
+
+## Lessons Learned
+
+I learned that I **LOVE** planning out associations and databases. Rails' Active Record does a lot of the heavy lifting, and makes it incredibly satisfying to interact with my models. I made good use of my whiteboard to map out the relationships between my different models, and used the Annotate gem to display them in the model files.
