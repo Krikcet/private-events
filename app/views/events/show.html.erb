@@ -31,10 +31,10 @@
   
   
     <% if user_signed_in? && @event.creator.id === current_user.id %>
-      <button id='invite-form-button'>Invite Someone</button>
+      <button id='invite-form-button' class='btn btn-dark mb-3'>Invite Someone</button>
       <div id="invite-form"><%= render :partial => 'event_invitations/form', :locals => {:event_invitation => @event.event_invitations.new} %></div>
-      <%= button_to "Destroy this event", @event, method: :delete %>
-      <%= link_to "Edit this event", edit_event_path(@event) %>
+      <%= button_to "Destroy this event", @event, method: :delete, class: 'btn btn-dark'%>
+      <%= link_to "Edit this event", edit_event_path(@event), class: 'link-dark'%>
     <% end %>
   
   
