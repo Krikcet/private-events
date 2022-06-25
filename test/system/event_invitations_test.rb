@@ -15,7 +15,7 @@ class EventInvitationsTest < ApplicationSystemTestCase
     click_on "New event invitation"
 
     fill_in "Invited event", with: @event_invitation.invited_event_id
-    fill_in "User invited", with: @event_invitation.user_invited_id
+    fill_in "User invited", with: @event_invitation.invited_user_id
     click_on "Create Event invitation"
 
     assert_text "Event invitation was successfully created"
@@ -27,7 +27,7 @@ class EventInvitationsTest < ApplicationSystemTestCase
     click_on "Edit this event invitation", match: :first
 
     fill_in "Invited event", with: @event_invitation.invited_event_id
-    fill_in "User invited", with: @event_invitation.user_invited_id
+    fill_in "User invited", with: @event_invitation.invited_user_id
     click_on "Update Event invitation"
 
     assert_text "Event invitation was successfully updated"

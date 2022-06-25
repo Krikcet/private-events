@@ -17,7 +17,7 @@ class EventInvitationsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create event_invitation" do
     assert_difference("EventInvitation.count") do
-      post event_invitations_url, params: { event_invitation: { invited_event_id: @event_invitation.invited_event_id, user_invited_id: @event_invitation.user_invited_id } }
+      post event_invitations_url, params: { event_invitation: { invited_event_id: @event_invitation.invited_event_id, invited_user_id: @event_invitation.invited_user_id } }
     end
 
     assert_redirected_to event_invitation_url(EventInvitation.last)
@@ -34,7 +34,7 @@ class EventInvitationsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update event_invitation" do
-    patch event_invitation_url(@event_invitation), params: { event_invitation: { invited_event_id: @event_invitation.invited_event_id, user_invited_id: @event_invitation.user_invited_id } }
+    patch event_invitation_url(@event_invitation), params: { event_invitation: { invited_event_id: @event_invitation.invited_event_id, invited_user_id: @event_invitation.invited_user_id } }
     assert_redirected_to event_invitation_url(@event_invitation)
   end
 

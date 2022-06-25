@@ -10,9 +10,9 @@
 #
 
 one:
-  user_invited_id: 1
+  invited_user_id: 1
   invited_event_id: 1
 
 two:
-  user_invited_id: 1
+  invited_user_id: 1
   invited_event_id: 1
