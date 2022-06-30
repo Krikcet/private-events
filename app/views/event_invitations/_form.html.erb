@@ -1,18 +1,31 @@
 <%= form_with(model: event_invitation) do |form| %>
-  <div>
-    <%= simple_form_for(@event.event_invitations.new) do |f| %>
-      <%= f.error_notification %>
-      <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
-      <div class="form-inputs">
-        <% @possible_invites = User.all.reject { |user| user.id == current_user.id || @event.invited_users.include?(user) || @event.attendees.include?(user) } %>
-        <%= f.input :invited_user_id, label: 'Invite:', collection: @possible_invites, label_method: :username, value: :id %>
-        <%= f.hidden_field :invited_event_id, value: @event.id %>
-        <p><b>To: </b><%= @event.title %></p>
-      </div>
+  <div class='card'>
+    <div class="card-body">
+      <%= simple_form_for(@event.event_invitations.new) do |f| %>
+
+        <%= f.error_notification %>
+
+        <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+        <div class="form-inputs">
+        
+          <% @possible_invites = User.all.reject { |user| user.id == current_user.id || @event.invited_users.include?(user) || @event.attendees.include?(user) } %>
+        
+          <%= f.input :invited_user_id, label: 'Invite:', collection: @possible_invites, label_method: :username, value: :id, default: @possible_invites[0] %>
+        
+          <%= f.hidden_field :invited_event_id, value: @event.id %>
+        
+          <p><b>To: </b><%= @event.title %></p>
+        
+        </div>
     
-      <div class="form-actions">
-        <%= f.button :submit, 'Invite!', class: "btn btn-dark mb-3"%>
-      </div>
-    <% end %>
+        <div class="form-actions">
+        
+          <%= f.button :submit, 'Invite!', class: "btn btn-dark mb-3"%>
+        
+        </div>
+      
+      <% end %>
+    </div>
   </div>
 <% end %>
