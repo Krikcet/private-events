@@ -1,7 +1,7 @@
 <h1>New event invitation</h1>
-
-<%= render "form", event_invitation: @event_invitation %>
-
+<%= turbo_frame_tag 'invite_form_tag' do%>
+  <%= render "form", event_invitation: @event_invitation %>
+<% end %>
 <br>
 
 <div>

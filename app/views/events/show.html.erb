@@ -31,8 +31,9 @@
   
   
     <% if user_signed_in? && @event.creator.id === current_user.id %>
-      <button id='invite-form-button' class='btn btn-dark mb-3'>Invite Someone</button>
-      <div id="invite-form"><%= render :partial => 'event_invitations/form', :locals => {:event_invitation => @event.event_invitations.new} %></div>
+    <%= turbo_frame_tag 'invite_form_tag' do%>
+      <%= link_to 'Do it!', new_event_invitation_path(:event_invitation => {:invited_event_id => @event.id}) %>
+    <% end %>
       <%= button_to "Destroy this event", @event, method: :delete, class: 'btn btn-dark'%>
       <%= link_to "Edit this event", edit_event_path(@event), class: 'link-dark'%>
     <% end %>

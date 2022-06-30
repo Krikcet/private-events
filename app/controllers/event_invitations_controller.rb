@@ -13,6 +13,7 @@ class EventInvitationsController < ApplicationController
   # GET /event_invitations/new
   def new
     @event_invitation = EventInvitation.new
+    @event = Event.find(event_invitation_params[:invited_event_id])
   end
 
   # GET /event_invitations/1/edit
